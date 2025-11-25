@@ -30,7 +30,7 @@ export default function Index() {
           <Text className="text-white text-center mt-10">Error: {error?.message}</Text>
         ) : (
           <View className="mt-10">
-            <SearchBar value="" onPress={() => router.push("/search")} placeholder="Search for a movie" />
+            <SearchBar value="" onPress={() => router.push("/search")} placeholder="Search for a movie" editable={false} />
 
             <Text className="text-white text-lg font-bold mt-5 mb-4">Latest Movies</Text>
 
