@@ -46,7 +46,7 @@ export default function TabsLayout() {
         tabBarStyle: {
           backgroundColor: "#0F0D23",
           borderRadius: 50,
-          marginHorizontal: 20,
+          marginHorizontal: 35,
           marginBottom: 36,
           height: 51,
           position: "absolute",
@@ -85,17 +85,6 @@ export default function TabsLayout() {
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon focused={focused} icon={icons.save} title="Saved" />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.person} title="Profile" />
           ),
         }}
       />
