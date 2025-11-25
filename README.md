@@ -2,14 +2,20 @@
 
 A modern, **React Native mobile application** for **discovering**, **searching**, and managing your **favorite movies**. Built with **Expo**, **NativeWind** (Tailwind CSS), and powered by The Movie Database (TMDB) API.
 
+**NOTE**: Project idea and UI design were taken from [JavaScript Mastery](https://www.youtube.com/@javascriptmastery)
+
 ### App Preview
 
+<img width="325" height="1266" alt="IMG_2819" src="https://github.com/user-attachments/assets/2ff1d761-dbed-4481-abf5-0914d2763a95" />
+<img width="325" height="1266" alt="IMG_2820" src="https://github.com/user-attachments/assets/efb4e6d9-bed6-4cdb-80f3-2df5909414fe" />
+<img width="325" height="1266" alt="IMG_2822" src="https://github.com/user-attachments/assets/6fcd70c0-0713-4d0d-ab19-465004a5b764" />
 
 ### Environment Variables
 
 ```env
 EXPO_PUBLIC_TMDB_API_KEY=<your_api_key>
-EXPO_PUBLIC_TMDB_ACCESS_TOKEN=your_access_token
+EXPO_PUBLIC_TMDB_ACCESS_TOKEN=your_access_token![Uploading IMG_2820.PNG…]()
+
 ```
 
 Get your credentials from [TMDB](https://www.themoviedb.org/settings/api).
