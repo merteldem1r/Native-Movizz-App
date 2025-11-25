@@ -1,6 +1,6 @@
 ## MOVIZZ React Native - Movie Discovery App
 
-A modern, feature-rich React Native mobile application for discovering, searching, and managing your favorite movies. Built with Expo, NativeWind (Tailwind CSS), and powered by The Movie Database (TMDB) API..
+A modern, **React Native mobile application** for **discovering**, **searching**, and managing your **favorite movies**. Built with **Expo**, **NativeWind** (Tailwind CSS), and powered by The Movie Database (TMDB) API.
 
 ### App Preview
 
