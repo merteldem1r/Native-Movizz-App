@@ -2,39 +2,38 @@ import { useEffect, useState } from "react";
 
 interface UseFetchResult<T> {
   data: T | null;
-  loading: boolean;
+  isLoading: boolean;
   error: Error | null;
   refetch: () => Promise<void>;
 }
 
-function useFetch<T>(
-  fetchFn: () => Promise<T>,
-  dependencies: any[] = []
-): UseFetchResult<T> {
+function useFetch<T>(fetchFn: () => Promise<T>, autoFetch: boolean = true): UseFetchResult<T> {
   const [data, setData] = useState<T | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
   const fetchData = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       setError(null);
       const result = await fetchFn();
       setData(result);
     } catch (err) {
       setError(err instanceof Error ? err : new Error("An error occurred"));
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData();
-  }, dependencies);
+    if (autoFetch) {
+      fetchData();
+    }
+  }, []);
 
   return {
     data,
-    loading,
+    isLoading,
     error,
     refetch: fetchData,
   };
