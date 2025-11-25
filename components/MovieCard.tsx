@@ -17,13 +17,18 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie
           resizeMode="cover"
         />
 
-        <Text className="text-white text-sm fond-bold mt-2">
-          {title.length > 20 ? `${title.substring(0, 10)}...` : title}
+        <Text className="text-white text-sm fond-bold mt-2" numberOfLines={1}>
+          {title}
         </Text>
 
         <View className="flex-row justify-start items-center gap-x-1">
-          <Image src={icons.star} className="size-4" />
-          <Text className="">{Math.round(vote_average)}</Text>
+          <Image source={icons.star} className="size-4" />
+          <Text className="text-xss text-white text-bold uppercase">{vote_average.toFixed(1)}</Text>
+        </View>
+
+        <View className="flex-row items-center justify-between">
+          <Text className="text-xs text-light-300">{release_date.split("-")[0]}</Text>
+          {/* <Text className="text-xs text-light-300 font-medium uppercase">Movie</Text> */}
         </View>
       </TouchableOpacity>
     </Link>
