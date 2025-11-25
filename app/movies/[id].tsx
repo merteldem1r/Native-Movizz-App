@@ -1,8 +1,9 @@
 import { icons } from "@/constants/icons";
 import useFetch from "@/hooks/useFetch";
+import { isMovieSaved, removeMovie, saveMovie } from "@/lib/storage";
 import { fetchMovieDetails } from "@/services/api";
 import { router, useLocalSearchParams } from "expo-router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface MovieInfoProps {
@@ -19,8 +20,54 @@ const MovieInfo = ({ label, value }: MovieInfoProps) => (
 
 const MovieDetails = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const [isSaved, setIsSaved] = useState(false);
+  const [savingLoading, setSavingLoading] = useState(false);
 
   const { data: movie, isLoading, error, refetch } = useFetch(() => fetchMovieDetails(id));
+
+  // Check if movie is already saved
+  useEffect(() => {
+    const checkSavedStatus = async () => {
+      if (id) {
+        const saved = await isMovieSaved(Number(id));
+        setIsSaved(saved);
+      }
+    };
+    checkSavedStatus();
+  }, [id]);
+
+  const handleSaveToggle = async () => {
+    if (!movie) return;
+
+    setSavingLoading(true);
+    try {
+      if (isSaved) {
+        // Remove movie
+        const success = await removeMovie(Number(id));
+        if (success) {
+          setIsSaved(false);
+        }
+      } else {
+        // Save movie
+        const movieToSave: StoredMovie = {
+          id: movie.id,
+          title: movie.title,
+          poster_path: movie.poster_path,
+          overview: movie.overview,
+          release_date: movie.release_date,
+          vote_average: movie.vote_average,
+        };
+        const success = await saveMovie(movieToSave);
+        if (success) {
+          setIsSaved(true);
+        }
+      }
+    } catch (error) {
+      console.error("Error toggling save status:", error);
+    } finally {
+      setSavingLoading(false);
+    }
+  };
 
   return (
     <View className="bg-primary flex-1">
@@ -68,6 +115,17 @@ const MovieDetails = () => {
           />
         </View>
       </ScrollView>
+
+      <TouchableOpacity
+        className="absolute bottom-20 left-0 right-0 mx-5 bg-light-100 rounded-lg py-3.5 flex flex-row items-center justify-center z-50"
+        onPress={handleSaveToggle}
+        disabled={savingLoading}
+      >
+        <Image source={icons.save} className="size-5 mr-2" tintColor="#030014" />
+        <Text className="text-primary font-semibold text-base">
+          {savingLoading ? "Loading..." : isSaved ? "Remove from Saved" : "Save Movie"}
+        </Text>
+      </TouchableOpacity>
 
       <TouchableOpacity
         className="absolute bottom-5 left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50"

@@ -3,7 +3,15 @@ import { Link } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie) => {
+interface MovieCardProps {
+  id: number;
+  poster_path: string;
+  title: string;
+  vote_average: number;
+  release_date: string;
+}
+
+const MovieCard = ({ id, poster_path, title, vote_average, release_date }: MovieCardProps) => {
   return (
     <Link href={`/movies/${id}`} asChild className="mb-2">
       <TouchableOpacity className="w-[30%]">
