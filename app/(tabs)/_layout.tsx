@@ -4,7 +4,13 @@ import { Image, ImageBackground, Text, View } from "react-native";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 
-function TabIcon({ focused, icon, title }: any) {
+interface TabIconProps {
+  focused: boolean;
+  icon: any;
+  title: string;
+}
+
+function TabIcon({ focused, icon, title }: TabIconProps) {
   if (focused) {
     return (
       <ImageBackground
