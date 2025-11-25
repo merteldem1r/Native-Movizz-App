@@ -1,8 +1,26 @@
-# Welcome to your Expo app 👋
+## MOVIZZ React Native - Movie Discovery App
+
+A modern, feature-rich React Native mobile application for discovering, searching, and managing your favorite movies. Built with Expo, NativeWind (Tailwind CSS), and powered by The Movie Database (TMDB) API..
+
+### App Preview
+
+
+### Environment Variables
+
+```env
+EXPO_PUBLIC_TMDB_API_KEY=<your_api_key>
+EXPO_PUBLIC_TMDB_ACCESS_TOKEN=your_access_token
+```
+
+Get your credentials from [TMDB](https://www.themoviedb.org/settings/api).
+
+---
+
+### Running the Project
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+#### Get started
 
 1. Install dependencies
 
@@ -25,7 +43,7 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+#### Get a fresh project
 
 When you're ready, run:
 
@@ -34,17 +52,3 @@ npm run reset-project
 ```
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
