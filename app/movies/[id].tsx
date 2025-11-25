@@ -71,7 +71,7 @@ const MovieDetails = () => {
 
   return (
     <View className="bg-primary flex-1">
-      <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 150 }}>
         <View>
           <Image
             source={{
