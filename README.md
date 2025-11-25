@@ -6,9 +6,10 @@ A modern, **React Native mobile application** for **discovering**, **searching**
 
 ### App Preview
 
-<img width="325" height="1266" alt="IMG_2819" src="https://github.com/user-attachments/assets/2ff1d761-dbed-4481-abf5-0914d2763a95" />
-<img width="325" height="1266" alt="IMG_2820" src="https://github.com/user-attachments/assets/efb4e6d9-bed6-4cdb-80f3-2df5909414fe" />
-<img width="325" height="1266" alt="IMG_2822" src="https://github.com/user-attachments/assets/6fcd70c0-0713-4d0d-ab19-465004a5b764" />
+<img width="375" alt="IMG_2819" src="https://github.com/user-attachments/assets/2ff1d761-dbed-4481-abf5-0914d2763a95" />
+<img width="375" alt="IMG_2820" src="https://github.com/user-attachments/assets/efb4e6d9-bed6-4cdb-80f3-2df5909414fe" />
+<img width="375" alt="IMG_2822" src="https://github.com/user-attachments/assets/6fcd70c0-0713-4d0d-ab19-465004a5b764" />
+<img width="375" alt="IMG_2824" src="https://github.com/user-attachments/assets/4b03cb2a-daeb-4cb7-a6df-b2d1fb61557d" />
 
 ### Environment Variables
 
