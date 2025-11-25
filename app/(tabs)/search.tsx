@@ -4,6 +4,7 @@ import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import useFetch from "@/hooks/useFetch";
 import { fetchMovies } from "@/services/api";
+import { updateSearchCount } from "@/services/appwrite";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
 
@@ -14,6 +15,8 @@ const Search = () => {
   const movies = data?.results || [];
 
   useEffect(() => {
+    updateSearchCount(searchQuery, movies[0]);
+
     const timeoutId = setTimeout(() => {
       if (searchQuery.trim() !== "") {
         refetch();
