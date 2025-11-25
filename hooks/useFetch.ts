@@ -9,7 +9,7 @@ interface UseFetchResult<T> {
 
 function useFetch<T>(fetchFn: () => Promise<T>, autoFetch: boolean = true): UseFetchResult<T> {
   const [data, setData] = useState<T | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(autoFetch);
   const [error, setError] = useState<Error | null>(null);
 
   const fetchData = async () => {
