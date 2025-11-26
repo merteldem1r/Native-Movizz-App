@@ -6,7 +6,7 @@ A modern, **React Native mobile application** for **discovering**, **searching**
 
 ### App Preview
 
-![movizz-native](https://github.com/user-attachments/assets/de777cae-ceb7-4713-a11b-b3c45524bec7)
+![moviz-native](https://github.com/user-attachments/assets/e8c057fd-b925-48f5-884d-59fdadf47fd4)
 
 ### Environment Variables
 
@@ -46,13 +46,3 @@ In the output, you'll find options to open the app in a
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-#### Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
